@@ -7,7 +7,7 @@ Bulb is a personal and team logging feed. Users can create `posts` (microblogs l
 ### Post
 Posts can contain 500 characters of text. Markdown will eventually be supported. For now a new post request is made solely of:
 
-    Content [string]
+    Text [string]
 
 The application adds a timestamp (Unix timestamp) and unique ID [int] on successful request.
 
@@ -20,4 +20,21 @@ A point is a data point not intended to be “read” by a human, but eventually
     Tags [][string]
 
 The application adds a timestamp (Unix timestamp) and unique ID [int] on successful request.
+
+## Getting started
+
+The appliation can be started with `docker-compose up`  
+
+You'll have to create the `app_dev` database with `docker-compose run web mix ecto.create`  
+
+And then run the migrations with `docker-compose run web mix ecto.migrate`
+
+To see what's going on in Postgres:
+```bash
+docker ps (to get the container id of the running postgres container)
+docker exec -it [container_id] sh
+psql -U postgres
+\connect app_dev
+```
+
 
