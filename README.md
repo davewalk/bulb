@@ -25,6 +25,8 @@ The application adds a timestamp (Unix timestamp) and unique ID [int] on success
 
 The appliation can be started with `docker-compose up`  
 
+Install and compile the dependencies: `docker-compose run web mix do deps.get, compile`  
+
 You'll have to create the `app_dev` database with `docker-compose run web mix ecto.create`  
 
 And then run the migrations with `docker-compose run web mix ecto.migrate`
